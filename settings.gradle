@@ -1,2 +1,3 @@
 rootProject.name = 'api-conspect'
+include 'api-test'
 

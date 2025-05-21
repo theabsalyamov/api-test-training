@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+group = 'test'
+version = 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation("io.rest-assured:rest-assured:5.5.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    implementation("net.datafaker:datafaker:2.4.3")
+    implementation("ch.qos.logback:logback-classic:1.5.18")
+    implementation("ch.qos.logback:logback-core:1.5.18")
+    implementation("org.slf4j:slf4j-api:2.0.17")
+    implementation("org.aeonbits.owner:owner:1.0.12")
+
+}
+
+test {
+    useJUnitPlatform()
+
+    systemProperties System.getProperties()
+
+    jvmArgs '-Dfile.encoding=UTF-8'
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showStandardStreams true
+    }
+}
+

@@ -1,19 +1,20 @@
+
 plugins {
-    id 'java'
+    id "io.freefair.lombok" version "8.4" apply false
 }
 
-group = 'test'
-version = '1.0-SNAPSHOT'
+subprojects {
+    apply plugin: "java"
+    apply plugin: "io.freefair.lombok"
 
-repositories {
-    mavenCentral()
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly "org.projectlombok:lombok"
+        annotationProcessor "org.projectlombok:lombok"
+    }
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-}
 
-test {
-    useJUnitPlatform()
-}

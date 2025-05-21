@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+    <!-- Аппендер: вывод логов в консоль -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <pattern>%d %-5level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Логгер для пакета com.socks -->
+    <logger name="com.conspect" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <!-- Корневой логгер (по умолчанию) -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
