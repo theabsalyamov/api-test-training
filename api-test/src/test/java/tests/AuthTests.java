@@ -5,12 +5,14 @@ import api.assertions.AssertableResponse;
 import api.payloads.AuthPayloads;
 import api.responses.AuthRegistryResponse;
 import api.services.AuthApiService;
+import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import net.datafaker.Faker;
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -46,15 +48,13 @@ public class AuthTests {
     String password = faker.internet().password(10, 20, true, true, true);
 
     @Test
+    @Epic("Аутентификация")
+    @Feature("Регистрация пользователя")
+    @Story("Регистрация нового пользователя")
+    @DisplayName("Успешная регистрация нового пользователя")
+    @Description("Проверяет, что пользователь успешно создаётся с корректными данными")
+    @Severity(SeverityLevel.CRITICAL)
     public void newUserRegistration() {
-
-//        С помошью lombok мы можем так же писать такую цепочку вызовов сеттера
-//        Ниже аналог вот этому:
-//        AuthPayloads user = new AuthPayloads();
-//        user.setFullName("Ы А П");
-//        user.setEmail("test1209471-70@mail.ro");
-//        user.setPassword("SSSSsafawfasf1");
-//        user.setPasswordRepeat("SSSSsafawfasf1");
 
         AuthPayloads user = new AuthPayloads()
                 .fullName(fullName)
@@ -85,6 +85,12 @@ public class AuthTests {
     }
 
     @Test
+    @Epic("Аутентификация")
+    @Feature("Регистрация пользователя")
+    @Story("Попытка зарегистрировать уже существующего пользователя")
+    @DisplayName("Регистрация с существующим email")
+    @Description("Проверяет, что при повторной регистрации приходит 409 и сообщение об ошибке")
+    @Severity(SeverityLevel.NORMAL)
     public void sameUserRegistration() {
 
 
@@ -100,18 +106,11 @@ public class AuthTests {
                 .shouldHave(bodyField("roles", hasItem("USER")))
                 .shouldHave(bodyField("banned", equalTo(false)));
 
-//                .then().log().all()// Проверка ответа (then)
-//                .statusCode(201)// Проверка статуса
-//                .body("id", notNullValue())// Проверка полей тела
-//                .body("roles", hasItem("USER"))
-//                .body("banned", equalTo(false));
 
         authService.registryUser(user)
                 .shouldHave(statusCode(409))
                 .shouldHave(bodyField("message", equalTo("Пользователь с таким email уже зарегистрирован")));
-//                .then().log().all()// Проверка ответа (then)
-//                .statusCode(409)// Проверка статуса
-//                .body("message", equalTo("Пользователь с таким email уже зарегистрирован"));
+
 
 
 

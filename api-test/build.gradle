@@ -20,6 +20,8 @@ dependencies {
     implementation("ch.qos.logback:logback-core:1.5.18")
     implementation("org.slf4j:slf4j-api:2.0.17")
     implementation("org.aeonbits.owner:owner:1.0.12")
+    implementation("io.qameta.allure:allure-junit5:2.12.0")
+    implementation("io.qameta.allure:allure-rest-assured:2.12.0")
 
 }
 
@@ -33,6 +35,29 @@ test {
         events "passed", "skipped", "failed"
         exceptionFormat "full"
         showStandardStreams true
+    }
+
+}
+
+allure {
+    version = '2.24.0'
+    useJUnit5 {
+        version = '2.24.0'
+    }
+}
+
+
+tasks.test {
+    doFirst {
+        println '🧹 Удаляем старые allure-results перед запуском тестов...'
+        delete file('build/allure-results')
+    }
+}
+
+tasks.named("allureReport") {
+    doFirst {
+        println '🧹 Удаляем старый allure-report перед генерацией...'
+        delete file("build/reports/allure-report")
     }
 }
 

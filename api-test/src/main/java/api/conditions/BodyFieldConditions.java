@@ -1,6 +1,8 @@
 package api.conditions;
 
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.hamcrest.Matcher;
 
@@ -13,6 +15,7 @@ public class BodyFieldConditions implements Condition{
     private final Matcher matcher;
 
     @Override
+    @Step("{this}")
     public void check(Response response) {
         response.then().assertThat().body(jsonPath, matcher);
 
@@ -20,6 +23,6 @@ public class BodyFieldConditions implements Condition{
 
     @Override
     public String toString() {
-        return "body field [" + jsonPath + "] " + matcher;
+        return "Проверяем: тело содержит поле \"" + jsonPath + "\" с условием \"" + matcher + "\"";
     }
 }
