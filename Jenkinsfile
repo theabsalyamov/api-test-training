@@ -1,8 +1,8 @@
 node {
 
     stage("checkout repo"){
-        git branch: 'master',
-            credentialsId: 'github-token',
+        git branch: 'main',
+            credentialsId: 'github-access-token',
             url: 'https://github.com/theabsalyamov/api-test-training.git'
     }
 
