@@ -1,7 +1,3 @@
-tools {
-    jdk 'JDK-17'
-}
-
 pipeline {
     agent any
 
