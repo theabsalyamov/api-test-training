@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        JAVA_HOME = tool name: 'JDK-17', type: 'hudson.model.JDK'
+        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+    }
+
     stages {
         stage('Checkout repo') {
             steps {
@@ -13,7 +18,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'chmod +x ./gradlew'
-                // Принудительно отключаем toolchain
                 sh './gradlew clean api-test:assemble -Dorg.gradle.java.installations.auto-detect=false'
             }
         }
@@ -32,4 +36,3 @@ pipeline {
         }
     }
 }
-
