@@ -1,4 +1,4 @@
-package api.conditions;
+package cinescope.api.conditions;
 
 import lombok.experimental.UtilityClass;
 import org.hamcrest.Matcher;

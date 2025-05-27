@@ -1,4 +1,4 @@
-package api;
+package cinescope.api;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
@@ -8,7 +8,13 @@ import org.aeonbits.owner.ConfigFactory;
 public interface ProjectConfig extends Config {
 
 
-    String baseUrl();
+    String authBaseUrl();
+
+    String adminUserName();
+
+    String adminUserPassword();
+
+    String moviesBaseUrl();
 
     @DefaultValue("ru")
     String locale();

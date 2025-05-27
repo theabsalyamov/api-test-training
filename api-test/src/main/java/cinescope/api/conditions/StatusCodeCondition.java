@@ -1,8 +1,7 @@
-package api.conditions;
+package cinescope.api.conditions;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

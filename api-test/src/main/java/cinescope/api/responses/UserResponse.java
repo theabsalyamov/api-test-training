@@ -1,4 +1,4 @@
-package api.responses;
+package cinescope.api.responses;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,19 +7,20 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 
-@Getter
+@Accessors(fluent = true)
 @Setter
-public class AuthRegistryResponse {
+@Getter
+public class UserResponse {
 
 	@JsonProperty("roles")
 	private List<String> roles;
 
-	@JsonProperty("verified")
-	private boolean verified;
+	@JsonProperty("fullName")
+	private String fullName;
 
 	@JsonProperty("id")
 	private String id;
 
-	@JsonProperty("banned")
-	private boolean banned;
+	@JsonProperty("email")
+	private String email;
 }

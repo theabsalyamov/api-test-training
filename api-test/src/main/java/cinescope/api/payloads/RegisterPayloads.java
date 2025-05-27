@@ -1,4 +1,4 @@
-package api.payloads;
+package cinescope.api.payloads;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(fluent = true) // Позволяет вызывать сеттеры и геттеры через точку обращаясь через "точку" е этим методам без приставок get и set
-public class AuthPayloads{
+public class RegisterPayloads {
 
 	@JsonProperty("password")
 	private String password;

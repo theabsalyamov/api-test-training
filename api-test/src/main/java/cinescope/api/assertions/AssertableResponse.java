@@ -1,6 +1,6 @@
-package api.assertions;
+package cinescope.api.assertions;
 
-import api.conditions.Condition;
+import cinescope.api.conditions.Condition;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import lombok.RequiredArgsConstructor;

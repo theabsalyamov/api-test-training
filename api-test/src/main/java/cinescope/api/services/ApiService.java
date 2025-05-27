@@ -1,6 +1,6 @@
-package api.services;
+package cinescope.api.services;
 
-import api.ProjectConfig;
+import cinescope.api.ProjectConfig;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.Filter;
@@ -17,10 +17,13 @@ import java.util.List;
 
 public class ApiService {
 
+    protected String baseUrl;
     //protected чтобы доступ был только внутри пакета service
     protected RequestSpecification setUp(){
         return RestAssured
-                .given().contentType(ContentType.JSON)
+                .given()
+                .baseUri(baseUrl)
+                .contentType(ContentType.JSON)
                 .filters(getFilters());
     }
 

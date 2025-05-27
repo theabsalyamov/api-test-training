@@ -1,4 +1,4 @@
-package api.conditions;
+package cinescope.api.conditions;
 
 import io.restassured.response.Response;
 
