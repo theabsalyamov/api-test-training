@@ -1,4 +1,4 @@
-package tests.Auth;
+package cinescope.api.tests.Auth;
 
 import cinescope.api.ProjectConfig;
 import cinescope.api.payloads.LoginPayloads;

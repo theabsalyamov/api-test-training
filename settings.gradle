@@ -1,3 +1,4 @@
 rootProject.name = 'api-conspect'
 include 'api-test'
+include 'ui-test'
 

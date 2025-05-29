@@ -1,4 +1,4 @@
-package tests.Auth;
+package cinescope.api.tests.Auth;
 import static cinescope.api.conditions.Conditions.statusCode;
 import static cinescope.api.conditions.Conditions.bodyField;
 

@@ -7,6 +7,6 @@
     <file url="file://$PROJECT_DIR$/api-test/src/main/java/cinescope/api/conditions/Condition.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-test/src/main/java/cinescope/api/conditions/Conditions.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-test/src/main/java/cinescope/api/conditions/StatusCodeCondition.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/api-test/src/test/java/tests/Auth/AuthTests.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-test/src/test/java/cinescope/api/tests/Auth/AuthTests.java" charset="UTF-8" />
   </component>
 </project>

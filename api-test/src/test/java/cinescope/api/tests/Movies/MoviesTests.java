@@ -1,4 +1,4 @@
-package tests.Movies;
+package cinescope.api.tests.Movies;
 
 import cinescope.api.ProjectConfig;
 import cinescope.api.filters.MoviesFilter;

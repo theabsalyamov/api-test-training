@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/api-test" />
+            <option value="$PROJECT_DIR$/ui-test" />
           </set>
         </option>
       </GradleProjectSettings>
