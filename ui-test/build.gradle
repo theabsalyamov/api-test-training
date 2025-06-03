@@ -9,13 +9,18 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation("com.codeborne:selenide:7.9.3")
     implementation project(":api-test")
+    implementation("net.datafaker:datafaker:2.4.3")
+    implementation("org.aeonbits.owner:owner:1.0.12")
+    implementation("io.rest-assured:rest-assured:5.5.1")
 }
 
 test {
     useJUnitPlatform()
 }
+

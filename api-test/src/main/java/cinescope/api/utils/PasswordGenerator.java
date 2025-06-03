@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class PasswordGenerator {
 
-    private static final Faker faker = new Faker(new Locale("ru"));
+    public static final Faker faker = new Faker(new Locale("ru"));
     private static final String SPECIAL_CHARS = "?@#$%^&*_\\-+()[]{}><\\\\/\\\\|\"'.,:;";
 
     public static String generateValidPassword() {

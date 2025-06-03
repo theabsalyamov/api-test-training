@@ -16,6 +16,8 @@ public interface ProjectConfig extends Config {
 
     String moviesBaseUrl();
 
+    String baseUrl();
+
     @DefaultValue("ru")
     String locale();
 
